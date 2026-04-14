@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExamWaliSite — Redesigned</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-dot"></div>
+      ExamWali<span style="color:var(--accent)">Site</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#exams">Exams</a></li>
+      <li><a href="#study">Study Plan</a></li>
+      <li><a href="#mock">Mock Tests</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li>
+        <div class="streak-badge" id="streakBadge"><span class="streak-fire">🔥</span> <span class="streak-count"
+            id="streakCount">Day 0</span> <span class="streak-meta" id="streakMeta"></span></div>
+      </li>
+      <li><a href="#" class="nav-cta">Start Free →</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">🇮🇳 India's Smartest Exam Prep Platform</div>
+      <h1 class="hero-title">
+        Crack Any Exam.
+        <span class="line2">Your Way.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Personalized study plans, AI-powered mock tests, and expert notes — all in one place. Built for UPSC, SSC,
+        Banking, Railways, Defence & more.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Start for Free →</a>
+        <a href="#exams" class="btn-secondary">Browse Exams</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">2.4M+</span>
+          <span class="stat-label">Students</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Exam Covered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Free</span>
+          <span class="stat-label">To Start</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-float">
+      <div class="float-card">
+        <div class="float-icon" style="background:rgba(67,232,160,0.15)">🎯</div>
+        <div class="float-info">
+          <div class="title">Daily Target Met!</div>
+          <div class="sub">Priya cleared 40 questions</div>
+        </div>
+      </div>
+      <div class="float-card">
+        <div class="float-icon" style="background:rgba(255,200,74,0.15)">🏆</div>
+        <div class="float-info">
+          <div class="title">Rank #3 in Mock</div>
+          <div class="sub">SSC CGL Mock Test Series</div>
+        </div>
+      </div>
+      <div class="float-card">
+        <div class="float-icon" style="background:rgba(108,99,255,0.15)">📈</div>
+        <div class="float-info">
+          <div class="title">Score Improved 32%</div>
+          <div class="sub">This week vs last week</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-section" id="exams">
+    <div class="section-label">Find Your Exam</div>
+    <h2 class="section-title">What are you preparing for?</h2>
+    <div class="search-bar">
+      <span style="font-size:18px; color:var(--muted)">🔍</span>
+      <input type="text" placeholder="Search UPSC, SBI PO, SSC CGL, NDA..." />
+      <button class="search-btn">Search</button>
+    </div>
+    <div class="popular-tags">
+      <span class="tag-label">Popular:</span>
+      <span class="tag">UPSC CSE</span>
+      <span class="tag">SSC CGL</span>
+      <span class="tag">SBI PO</span>
+      <span class="tag">NDA</span>
+      <span class="tag">IBPS Clerk</span>
+      <span class="tag">Railway NTPC</span>
+      <span class="tag">CUET</span>
+    </div>
+  </section>
+
+  <section class="countdown-section" id="countdown">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">⏱ Exam Countdown</div>
+        <h2 class="section-title">Time left for your exams</h2>
+        <p class="countdown-subtitle">Select the exams you're preparing for and stay motivated with a live countdown.
+          Never lose track of your deadline.</p>
+      </div>
+    </div>
+
+    <div class="exam-selector reveal" id="examSelector">
+      
+    </div>
+
+    <div id="countdownContainer">
+      <div class="countdowns-empty" id="countdownEmpty">
+        <div class="empty-icon">📋</div>
+        <div>Select an exam above to start your countdown</div>
+      </div>
+      <div class="countdowns-grid" id="countdownsGrid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Categories</div>
+        <h2 class="section-title">Explore by exam type</h2>
+      </div>
+      <a href="#" class="see-all">View all exams →</a>
+    </div>
+    <div class="categories-grid">
+      <a href="#" class="cat-card banking reveal">
+        <div class="cat-icon" style="background:rgba(67,232,160,0.15)">🏦</div>
+        <span class="cat-arrow">↗</span>
+        <div class="cat-name">Banking & Finance</div>
+        <div class="cat-count">SBI PO, IBPS, RBI, RRB · 48 exams</div>
+      </a>
+      <a href="#" class="cat-card ssc reveal">
+        <div class="cat-icon" style="background:rgba(108,99,255,0.15)">📋</div>
+        <span class="cat-arrow">↗</span>
+        <div class="cat-name">SSC Exams</div>
+        <div class="cat-count">CGL, CHSL, MTS, CPO · 22 exams</div>
+      </a>
+      <a href="#" class="cat-card upsc reveal">
+        <div class="cat-icon" style="background:rgba(255,200,74,0.15)">🏛️</div>
+        <span class="cat-arrow">↗</span>
+        <div class="cat-name">UPSC & Civil Services</div>
+        <div class="cat-count">CSE, CAPF, CDS, NDA · 18 exams</div>
+      </a>
+      <a href="#" class="cat-card railway reveal">
+        <div class="cat-icon" style="background:rgba(255,107,107,0.15)">🚂</div>
+        <span class="cat-arrow">↗</span>
+        <div class="cat-name">Railways</div>
+        <div class="cat-count">NTPC, Group D, JE · 30 exams</div>
+      </a>
+      <a href="#" class="cat-card defence reveal">
+        <div class="cat-icon" style="background:rgba(100,149,237,0.15)">⚔️</div>
+        <span class="cat-arrow">↗</span>
+        <div class="cat-name">Defence</div>
+        <div class="cat-count">NDA, CDS, AFCAT · 12 exams</div>
+      </a>
+      <a href="#" class="cat-card state reveal">
+        <div class="cat-icon" style="background:rgba(255,167,38,0.15)">🗺️</div>
+        <span class="cat-arrow">↗</span>
+        <div class="cat-name">State PSC</div>
+        <div class="cat-count">MPSC, BPSC, UPPSC · 60+ exams</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="featured-section" id="mock">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Trending Now</div>
+        <h2 class="section-title">Most enrolled exams</h2>
+      </div>
+      <a href="#" class="see-all">All mock tests →</a>
+    </div>
+    <div class="exams-list">
+      <a href="#" class="exam-row reveal">
+        <div class="exam-num">01</div>
+        <div class="exam-info">
+          <div class="name">UPSC Civil Services Exam (CSE) 2025</div>
+          <div class="meta">Prelims · GS + CSAT · 200+ study materials available</div>
+        </div>
+        <div class="exam-difficulty hard">Hard</div>
+        <div class="exam-slots">8,200 enrolled<br>this month</div>
+        <button class="exam-enroll">Enroll Free</button>
+      </a>
+      <a href="#" class="exam-row reveal">
+        <div class="exam-num">02</div>
+        <div class="exam-info">
+          <div class="name">SSC CGL Combined Graduate Level 2025</div>
+          <div class="meta">Tier 1 & 2 · Quant, English, GK, Reasoning · 150 mock tests</div>
+        </div>
+        <div class="exam-difficulty medium">Medium</div>
+        <div class="exam-slots">14,500 enrolled<br>this month</div>
+        <button class="exam-enroll">Enroll Free</button>
+      </a>
+      <a href="#" class="exam-row reveal">
+        <div class="exam-num">03</div>
+        <div class="exam-info">
+          <div class="name">SBI PO Probationary Officer 2025</div>
+          <div class="meta">Prelims + Mains · Banking aptitude, English, Data · 95 tests</div>
+        </div>
+        <div class="exam-difficulty medium">Medium</div>
+        <div class="exam-slots">11,200 enrolled<br>this month</div>
+        <button class="exam-enroll">Enroll Free</button>
+      </a>
+      <a href="#" class="exam-row reveal">
+        <div class="exam-num">04</div>
+        <div class="exam-info">
+          <div class="name">Railway NTPC Graduate Level 2025</div>
+          <div class="meta">CBT 1 & 2 · Math, GK, Reasoning · 80 full-length tests</div>
+        </div>
+        <div class="exam-difficulty easy">Easy-Med</div>
+        <div class="exam-slots">18,900 enrolled<br>this month</div>
+        <button class="exam-enroll">Enroll Free</button>
+      </a>
+      <a href="#" class="exam-row reveal">
+        <div class="exam-num">05</div>
+        <div class="exam-info">
+          <div class="name">NDA / NA National Defence Academy 2025</div>
+          <div class="meta">Maths + General Ability · Written + SSB · 60 tests</div>
+        </div>
+        <div class="exam-difficulty hard">Hard</div>
+        <div class="exam-slots">6,400 enrolled<br>this month</div>
+        <button class="exam-enroll">Enroll Free</button>
+      </a>
+    </div>
+  </section>
+
+  <section class="mock-chart-section reveal" id="mockChart">
+    <div class="mock-chart-card">
+      <div class="mock-chart-header">
+        <div class="mock-chart-title">📈 Your Performance Trend</div>
+        <div class="mock-chart-actions">
+          <input type="number" class="mock-score-input" id="mockScoreInput" placeholder="Score" min="0" max="100" />
+          <button class="mock-add-btn" id="mockAddBtn">+ Add Score</button>
+          <button class="sim-trigger" id="simTrigger">🎯 Exam Mode</button>
+        </div>
+      </div>
+      <canvas class="mock-chart-canvas" id="mockChartCanvas"></canvas>
+      <div class="mock-avg-stat" id="mockAvgStat"></div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Why ExamWaliSite</div>
+        <h2 class="section-title">Everything you need. Nothing you don't.</h2>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card accent-green reveal">
+        <div class="feature-num">01</div>
+        <div class="feature-icon">🧠</div>
+        <div class="feature-title">Smart Adaptive Tests</div>
+        <p class="feature-desc">Our engine adjusts difficulty in real time based on your performance — so every test
+          pushes your true limit.</p>
+      </div>
+      <div class="feature-card accent-purple reveal">
+        <div class="feature-num">02</div>
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Deep Analytics</div>
+        <p class="feature-desc">Track every topic, every attempt. Know exactly where you're losing marks and fix it
+          before exam day.</p>
+      </div>
+      <div class="feature-card accent-yellow reveal">
+        <div class="feature-num">03</div>
+        <div class="feature-icon">📄</div>
+        <div class="feature-title">Concise Notes & PDFs</div>
+        <p class="feature-desc">500+ handcrafted short notes by toppers and experts. Download, study offline, revise in
+          minutes.</p>
+      </div>
+      <div class="feature-card accent-red reveal">
+        <div class="feature-num">04</div>
+        <div class="feature-icon">📅</div>
+        <div class="feature-title">Auto Study Plans</div>
+        <p class="feature-desc">Tell us your exam date, and we'll generate a day-by-day plan that fits your schedule and
+          targets your weak spots.</p>
+      </div>
+      <div class="feature-card accent-blue reveal">
+        <div class="feature-num">05</div>
+        <div class="feature-icon">🌐</div>
+        <div class="feature-title">10 Indian Languages</div>
+        <p class="feature-desc">Study in Hindi, English, Tamil, Telugu, Kannada, and more. Language is never a barrier
+          here.</p>
+      </div>
+      <div class="feature-card accent-pink reveal">
+        <div class="feature-num">06</div>
+        <div class="feature-icon">🔔</div>
+        <div class="feature-title">Live Exam Alerts</div>
+        <p class="feature_desc">Never miss a notification, cutoff, or admit card date. Get SMS + email alerts for every
+          exam you're enrolled in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources-section" id="notes">
+    <div class="resources-header reveal">
+      <h2 class="section-title">All The Study Resources You Need In One Place</h2>
+      <p class="resources-subtitle">Explore curated notes, NCERT books, mock tests, question papers, and exam preparation guides for classes, boards, and competitive exams like NEET, JEE, and CUET.</p>
+    </div>
+
+    <div class="resources-tabs reveal" id="resourcesTabs">
+      <button class="resources-tab active" data-filter="all">All</button>
+      <button class="resources-tab" data-filter="cbse">CBSE</button>
+      <button class="resources-tab" data-filter="neet">NEET</button>
+      <button class="resources-tab" data-filter="jee">JEE</button>
+      <button class="resources-tab" data-filter="cuet">CUET</button>
+      <button class="resources-tab" data-filter="boards">State Boards</button>
+      <button class="resources-tab" data-filter="12th">12th Class</button>
+      <button class="resources-tab" data-filter="11th">11th Class</button>
+      <button class="resources-tab" data-filter="10th">10th Class</button>
+    </div>
+
+    <div class="resources-grid" id="resourcesGrid">
+      <div class="resource-card reveal" data-tags="cbse,10th,boards">
+        <div class="resource-card-top">
+          <div class="resource-icon">📄</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">CBSE Notes</div>
+        <div class="resource-desc">Clear and simple chapter-wise notes for CBSE subjects. Perfect for better understanding of important concepts.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="cbse,12th,boards">
+        <div class="resource-card-top">
+          <div class="resource-icon">📝</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">CBSE Sample Papers</div>
+        <div class="resource-desc">Practice with the CBSE sample question papers. Understand the concepts and improve your confidence before exams.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="cbse,boards">
+        <div class="resource-card-top">
+          <div class="resource-icon">❓</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">CBSE Question Banks</div>
+        <div class="resource-desc">Important questions collected from previous exams and textbooks. Useful for practicing and preparing for CBSE exams.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="neet">
+        <div class="resource-card-top">
+          <div class="resource-icon">🧪</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">NEET Mock Tests</div>
+        <div class="resource-desc">Important questions collected from previous exams and textbooks. Useful for practicing and preparing for NEET exams.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="cbse,11th,10th">
+        <div class="resource-card-top">
+          <div class="resource-icon">📚</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">NCERT Books</div>
+        <div class="resource-desc">Access NCERT textbooks for different classes and subjects. Helpful for building strong basics and preparing for school exams.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="cbse,10th,boards">
+        <div class="resource-card-top">
+          <div class="resource-icon">📋</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">Class 10 Previous Papers</div>
+        <div class="resource-desc">Practice previous year question papers for Class 10 exams. Understand important topics and improve exam preparation.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="neet">
+        <div class="resource-card-top">
+          <div class="resource-icon">🔬</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">NEET Biology Notes</div>
+        <div class="resource-desc">Easy-to-understand biology notes based on NCERT topics. Great for quick revision and NEET exam preparation.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="neet">
+        <div class="resource-card-top">
+          <div class="resource-icon">📑</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">NEET Previous Papers</div>
+        <div class="resource-desc">Solve NEET previous year question papers to understand the exam difficulty and improve problem-solving skills.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="jee">
+        <div class="resource-card-top">
+          <div class="resource-icon">⚡</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">JEE Physics Formulae</div>
+        <div class="resource-desc">Quick reference list of important physics formulas for JEE. Helps you revise key concepts and solve problems faster.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="jee">
+        <div class="resource-card-top">
+          <div class="resource-icon">🎯</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">JEE Main Mock Tests</div>
+        <div class="resource-desc">Practice JEE Main mock tests in a real exam-style format. Improve speed, accuracy, and exam readiness.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="cuet">
+        <div class="resource-card-top">
+          <div class="resource-icon">🎓</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">CUET Prep Material</div>
+        <div class="resource-desc">Study notes, practice questions, and guides for CUET exams. Helpful resources to prepare for university entrance tests.</div>
+      </div>
+      <div class="resource-card reveal" data-tags="cbse,12th,boards">
+        <div class="resource-card-top">
+          <div class="resource-icon">📖</div>
+          <span class="resource-arrow">↗</span>
+        </div>
+        <div class="resource-title">Class 12 Study Guides</div>
+        <div class="resource-desc">Simple study guides and important notes for Class 12 subjects. Great for quick revision and better exam preparation.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plan-section" id="study">
+    <div class="reveal">
+      <div class="section-label">Study Smarter</div>
+      <h2 class="section-title">Your personalized daily plan</h2>
+      <p
+        style="color:var(--muted); font-size:16px; max-width:440px; line-height:1.7; margin-top:16px; margin-bottom:32px;">
+        No more guessing what to study. Our planner automatically builds your day based on your exam date, past scores,
+        and the topics you struggle with most.
+      </p>
+      <a href="#" class="btn-primary" style="display:inline-flex">Create My Plan →</a>
+    </div>
+
+    <div class="plan-visual reveal">
+      <div class="plan-header">
+        <div class="plan-title-text">Week 3 — SSC CGL Prep</div>
+        <div style="font-size:13px; color:var(--muted)">Mon 14 Apr</div>
+      </div>
+      <div class="plan-days">
+        <div class="day-chip">M</div>
+        <div class="day-chip active">T</div>
+        <div class="day-chip">W</div>
+        <div class="day-chip">T</div>
+        <div class="day-chip">F</div>
+        <div class="day-chip">S</div>
+        <div class="day-chip">S</div>
+      </div>
+      <br />
+      <div class="plan-tasks">
+        <div class="task done" onclick="this.classList.toggle('done')">
+          <div class="task-check">✓</div>
+          <div class="task-text">Quant: Percentage & Profit-Loss</div>
+          <div class="task-duration">45 min</div>
+        </div>
+        <div class="task done" onclick="this.classList.toggle('done')">
+          <div class="task-check">✓</div>
+          <div class="task-text">English: Reading Comprehension</div>
+          <div class="task-duration">30 min</div>
+        </div>
+        <div class="task" onclick="this.classList.toggle('done')">
+          <div class="task-check"></div>
+          <div class="task-text">GK: Indian Polity — Preamble</div>
+          <div class="task-duration">25 min</div>
+        </div>
+        <div class="task" onclick="this.classList.toggle('done')">
+          <div class="task-check"></div>
+          <div class="task-text">Mock Test: Reasoning Section</div>
+          <div class="task-duration">60 min</div>
+        </div>
+        <div class="task" onclick="this.classList.toggle('done')">
+          <div class="task-check"></div>
+          <div class="task-text">Revision: Yesterday's errors</div>
+          <div class="task-duration">20 min</div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+        <div style="font-size:13px; color:var(--muted)">2 of 5 tasks done today</div>
+        <div style="font-size:13px; color:var(--accent3); font-weight:600">40% complete</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" style="width:40%"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="syllabus-section" id="syllabus">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">📚 Syllabus Progress</div>
+        <h2 class="section-title">Your Syllabus Progress</h2>
+      </div>
+    </div>
+    <div class="syllabus-grid" id="syllabusGrid">
+      
+    </div>
+  </section>
+
+  <section class="revision-queue-section" id="revisionQueue">
+    <div class="revision-queue-card reveal">
+      <div class="revision-queue-title">⚠️ Revision Queue</div>
+      <div id="revisionList">
+        <div class="revision-empty">All topics are up to date! Keep it up. 🎉</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Success Stories</div>
+        <h2 class="section-title">Real students, real results</h2>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="badge-cleared">✓ CLEARED</div>
+        <div class="quote">"</div>
+        <p class="text">ExamWaliSite's mock tests felt exactly like the real UPSC Prelims. The explanations for every
+          wrong answer helped me understand my mistakes. Cleared in my second attempt!</p>
+        <div class="testimonial-author">
+          <div class="avatar" style="background:rgba(108,99,255,0.2); color:var(--accent)">A</div>
+          <div class="author-info">
+            <div class="name">Injora</div>
+            <div class="role">UPSC CSE 2024 · Rank 1</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="badge-cleared">✓ CLEARED</div>
+        <div class="quote">"</div>
+        <p class="text">The SSC CGL notes are insanely good. Short, to the point, and easy to revise. I used to spend 3
+          hours on a topic — now I do it in 45 minutes and retain more.</p>
+        <div class="testimonial-author">
+          <div class="avatar" style="background:rgba(67,232,160,0.2); color:var(--accent3)">R</div>
+          <div class="author-info">
+            <div class="name">Ajit Doval</div>
+            <div class="role">SSC CGL 2024 · Final Selection</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="badge-cleared">✓ CLEARED</div>
+        <div class="quote">"</div>
+        <p class="text">As someone studying in Hindi medium, I always struggled with English platforms. ExamWaliSite in
+          Hindi is a game-changer. Cleared SBI PO on my first try!</p>
+        <div class="testimonial-author">
+          <div class="avatar" style="background:rgba(255,200,74,0.2); color:var(--accent4)">P</div>
+          <div class="author-info">
+            <div class="name">Hamza Ali Mazali</div>
+            <div class="role">SBI PO 2024 · Selected</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="final-stretch-banner" id="finalStretchBanner">
+    🚨 <strong>Final 10 Days Mode</strong> — Only revision and practice matter now. Stay laser-focused.
+    <button class="banner-close" id="bannerClose">✕</button>
+  </div>
+
+  <section class="cta-section">
+    <div class="cta-content reveal">
+      <h2 class="cta-title">Your <span class="highlight">dream job</span> is one exam away.</h2>
+      <p class="cta-sub">Join 2.4 million students already preparing smarter. Start free, no credit card needed.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="#" class="btn-primary" style="font-size:18px; padding:18px 40px">Start for Free →</a>
+        <a href="#" class="btn-secondary" style="font-size:18px; padding:18px 40px">View All Exams</a>
+      </div>
+      <p style="margin-top:24px; color:var(--muted); font-size:13px;">No credit card · 100% free to start · Used by
+        toppers across India</p>
+    </div>
+  </section>
+
+  <div class="peer-widget" id="peerWidget">
+    <button class="peer-close" id="peerClose">✕</button>
+    <div class="peer-rank-circle">
+      <div class="peer-rank-inner" id="peerPct">23%</div>
+    </div>
+    <div class="peer-info">
+      <div class="peer-highlight" id="peerHighlight">Top 23% this week</div>
+      <div class="peer-label">among active students</div>
+    </div>
+  </div>
+
+  <div class="sim-overlay" id="simOverlay">
+    <div class="sim-header">
+      <div class="sim-title">🎯 Exam Simulator</div>
+      <div class="sim-timer" id="simTimer">60:00</div>
+      <button class="sim-exit-btn" id="simExitBtn">Exit Exam</button>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question-card" id="simQuestionCard">
+        
+      </div>
+      <div class="sim-progress" id="simProgress"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="font-size:20px">
+          <div class="logo-dot"></div>
+          ExamWali<span style="color:var(--accent)">Site</span>
+        </a>
+        <p class="tagline">India's smartest exam preparation platform. Free to start, built to win.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Exams</h4>
+        <ul>
+          <li><a href="#">UPSC</a></li>
+          <li><a href="#">SSC</a></li>
+          <li><a href="#">Banking</a></li>
+          <li><a href="#">Railways</a></li>
+          <li><a href="#">Defence</a></li>
+          <li><a href="#">State PSC</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Study Notes</a></li>
+          <li><a href="#">Mock Tests</a></li>
+          <li><a href="#">Previous Papers</a></li>
+          <li><a href="#">Current Affairs</a></li>
+          <li><a href="#">Cut-off Lists</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ExamWaliSite. Made with ❤️ for India's exam warriors.</span>
+      <div class="social-links">
+        <a class="social-link" href="#">𝕏</a>
+        <a class="social-link" href="#">in</a>
+        <a class="social-link" href="#">▶</a>
+        <a class="social-link" href="#">📷</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

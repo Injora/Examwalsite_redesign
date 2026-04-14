@@ -213,14 +213,17 @@ Structure:
 ---
 
 ## 📸 Preview
+<img width="1512" height="860" alt="Screenshot 2026-04-14 at 19 39 06" src="https://github.com/user-attachments/assets/604f1c43-3f75-4924-87a0-03f4eadefabb" />
+<img width="1511" height="519" alt="Screenshot 2026-04-14 at 19 39 15" src="https://github.com/user-attachments/assets/76e17da1-7f23-4d7b-ad10-d41a00535e3d" />
+<img width="1511" height="348" alt="Screenshot 2026-04-14 at 19 39 24" src="https://github.com/user-attachments/assets/d53a63d1-2461-4249-96bb-2a6673bfeb34" />
+<img width="1512" height="412" alt="Screenshot 2026-04-14 at 19 39 34" src="https://github.com/user-attachments/assets/4e96ff55-dd93-4118-a051-e5b225ec8109" />
 
-_Add screenshots here_
 
 ---
 
 ## 🌐 Live Demo
 
-_Add deployed link (GitHub Pages)_
+examwalsite-redesign.vercel.app
 
 ---
 

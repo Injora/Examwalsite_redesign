@@ -1,4 +1,4 @@
-# 🚀 ExamWaliSite — Product Redesign Case Study
+# 🚀 ExamWaliSite — Product Redesign
 
 ## 🧠 Overview
 
